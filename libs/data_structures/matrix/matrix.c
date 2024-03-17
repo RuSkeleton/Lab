@@ -158,14 +158,15 @@ bool isSymmetricMatrix(matrix *m){
 }
 
 void transposeSquareMatrix(matrix *m){
-    for (int i = 0; i < m->nRows; i++)
-        for(int j = m->nRows - 1; j >= 0; j--)
-            if (i != j){
-                printf("%d %d\n", m->values[i][j], m->values[j][i]);
-                swap(&m->values[i][j], &m->values[j][i], sizeof(int));
-                printf("%d %d\n", m->values[i][j], m->values[j][i]);
-            }
+    assert(isSquareMatrix(m));
 
+    for (int i = 0; i < m->nRows; i++) {
+        for (int j = i + 1; j < m->nCols; j++) {
+            int temp = m->values[i][j];
+            m->values[i][j] = m->values[j][i];
+            m->values[j][i] = temp;
+        }
+    }
 }
 
 void transposeMatrix(matrix *m) {
@@ -330,7 +331,6 @@ void test_transpose_square_matrix() {
                                                    3, 6, 9},3, 3);
 
     transposeSquareMatrix(&m);
-    outputMatrix(m);
 
     assert(areTwoMatricesEqual(&m, &result));
 
