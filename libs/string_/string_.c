@@ -168,6 +168,33 @@ void test_find_space_reverse_4() {
     assert(findSpaceReverse(string + 4, string) == string);
 }
 
+void test_is_strings_equal_1() {
+    char string1[] = "Hello";
+    char string2[] = "Hello";
+
+    assert(strcmp_(string1, string2) == 0);
+}
+
+void test_is_strings_equal_2() {
+    char string1[] = "Hello";
+    char string2[] = "Hallo";
+
+    assert(strcmp_(string1, string2) > 0);
+}
+
+void test_is_strings_equal_3() {
+    char string1[] = "Hello";
+    char string2[] = "Hellower";
+
+    assert(strcmp_(string1, string2) < 0);
+}
+
+void test_strcmp_(){
+    test_is_strings_equal_1();
+    test_is_strings_equal_2();
+    test_is_strings_equal_3();
+}
+
 void test_string_1(){
     test_find_1();
     test_find_2();
@@ -189,4 +216,9 @@ void test_string_1(){
     test_find_space_reverse_2();
     test_find_space_reverse_3();
     test_find_space_reverse_4();
+}
+
+void test_string(){
+    test_string_1();
+    test_strcmp_();
 }
