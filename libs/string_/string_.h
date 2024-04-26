@@ -79,4 +79,10 @@ void replace(char *source, char *w1, char *w2);
 
 void test_replace();
 
+bool are_two_words_ordered(WordDescriptor word1, WordDescriptor word2);
+
+bool are_words_ordered(char *string);
+
+void test_are_words_ordered();
+
 #endif //UNTITLED1_STRING__H
