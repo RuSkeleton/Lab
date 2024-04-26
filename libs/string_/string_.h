@@ -106,4 +106,8 @@ void join_strings(char *string1, char *string2, char *result);
 
 void test_join_strings();
 
+void reverse_words_order(char *string);
+
+void test_reverse_words_order();
+
 #endif //UNTITLED1_STRING__H
