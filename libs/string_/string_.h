@@ -130,4 +130,9 @@ char* getLastWordInFirstStringInSecondString(char *s1, char *s2);
 
 void test_getLastWordInFirstStringInSecondString();
 
+bool has_same_words(char *string);
+
+void test_has_same_words();
+
+
 #endif //UNTITLED1_STRING__H
