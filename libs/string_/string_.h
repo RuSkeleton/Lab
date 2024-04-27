@@ -124,4 +124,10 @@ void reverse_words_order(char *string);
 
 void test_reverse_words_order();
 
+void wordDescriptorToString(WordDescriptor word, char *destination);
+
+char* getLastWordInFirstStringInSecondString(char *s1, char *s2);
+
+void test_getLastWordInFirstStringInSecondString();
+
 #endif //UNTITLED1_STRING__H
