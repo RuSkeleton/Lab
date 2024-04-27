@@ -134,5 +134,10 @@ bool has_same_words(char *string);
 
 void test_has_same_words();
 
+bool are_two_words_with_similar_characters(char *s1, char *s2);
+
+bool has_words_with_similar_characters(char *string);
+
+void test_has_words_with_similar_characters();
 
 #endif //UNTITLED1_STRING__H
