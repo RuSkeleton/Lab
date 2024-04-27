@@ -144,5 +144,8 @@ void get_string_without_words_like_last_word(char *string, char *result);
 
 void test_get_string_without_words_like_last_word();
 
+WordPrecedingFirstCommonWordReturnCode get_word_preceding_first_common_word(char *s1, char *s2, WordDescriptor *word);
+
+void test_get_word_preceding_first_common_word();
 
 #endif //UNTITLED1_STRING__H
