@@ -140,4 +140,9 @@ bool has_words_with_similar_characters(char *string);
 
 void test_has_words_with_similar_characters();
 
+void get_string_without_words_like_last_word(char *string, char *result);
+
+void test_get_string_without_words_like_last_word();
+
+
 #endif //UNTITLED1_STRING__H
