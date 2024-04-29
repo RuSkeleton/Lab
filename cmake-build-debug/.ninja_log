@@ -21,3 +21,16 @@
 30	382	7347095638858830	libs/algorithms/CMakeFiles/algorithms.dir/for_dm/for_dm.c.obj	68ffca90a495ff50
 382	528	7347095640316722	libs/algorithms/libalgorithms.a	91495bfebf13ee51
 528	918	7347095644177888	untitled1.exe	879eb2386354f045
+10	871	7359362267802913	CMakeFiles/untitled1.dir/main.c.obj	1a0d462e92ae875a
+28	893	7359362267993548	libs/algorithms/CMakeFiles/algorithms.dir/for_dm/for_dm.c.obj	68ffca90a495ff50
+19	983	7359362268907016	CMakeFiles/untitled1.dir/libs/string_/string_.c.obj	2fc13ace783cf199
+893	1066	7359362269776799	libs/algorithms/libalgorithms.a	91495bfebf13ee51
+1067	1521	7359362274250223	untitled1.exe	879eb2386354f045
+6	140	7359364991927196	CMakeFiles/untitled1.dir/main.c.obj	1a0d462e92ae875a
+140	318	7359364993659047	untitled1.exe	879eb2386354f045
+6	158	7359368093289242	CMakeFiles/untitled1.dir/main.c.obj	1a0d462e92ae875a
+158	338	7359368095056676	untitled1.exe	879eb2386354f045
+5	152	7359368278862846	CMakeFiles/untitled1.dir/main.c.obj	1a0d462e92ae875a
+152	336	7359368280641080	untitled1.exe	879eb2386354f045
+9	627	7359455816786222	CMakeFiles/untitled1.dir/main.c.obj	1a0d462e92ae875a
+628	1109	7359455821842919	untitled1.exe	879eb2386354f045

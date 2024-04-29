@@ -73,7 +73,6 @@ bool evalterm(const char **p, int num_c){
 }
 
 bool evalexpr(const char **p, int num_c){
-    //printf("in 2\n");
     bool r = evalterm(p, num_c);
     while(1) {
         int op = gettok(p, num_c, NULL);
@@ -87,10 +86,8 @@ bool evalexpr(const char **p, int num_c){
 }
 
 bool evalpri(const char **p, int num_c){
-    //printf("in 4\n");
     bool v;
     int op = gettok(p, num_c, &v);
-    //printf("%c", op);
     switch(op) {
         case '1': return v;
         case '~': return changeBool(evalpri(p, num_c));
@@ -111,8 +108,6 @@ bool evalpri(const char **p, int num_c){
 }*/
 
 bool is_constituent_in_PNFK(const char *expr, int num_c){
-    //printf("in 1\n");
-    //puts(expr);
     return evalexpr(&expr, num_c);
 }
 

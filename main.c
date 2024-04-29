@@ -11,39 +11,42 @@
 #include "libs/algorithms/algorithm.h"
 #include "libs/algorithms/for_dm/for_dm.h"
 #include "libs/string_/string_.h"
+#include "libs/data_structures/bitset/bitset.h"
 
-double getScalarProduct(int *a, int *b, int n) {
-    double result = 0;
-    for (int i = 0; i < n; i++) {
-        result += a[i] * b[i];
-    }
-    return result;
-}
+#define SYMMDIFF(a, b) bitset_symmetricDifference(a, b)
+#define COMPL(a) bitset_complement(bitset a)
+#define DIFF(a, b) bitset_difference(a, b)
+#define INTERSEC(a, b) bitset_intersection(a, b)
+#define UNION(a, b) bitset_union(a, b)
 
-long long getScalarProductRowAndCol(matrix m, int i, int j) {
-    int *column = malloc(sizeof(int)*m.nRows);
-    for (int g = 0; g < m.nRows; g++) {
-        column[g] = m.values[g][j];
-    }
-    return getScalarProduct(m.values[i], column, m.nRows);
-}
-
-long long getSpecialScalarProduct(matrix m) {
-    position max_pos = getMaxValuePos(m);
-    position min_pos = getMinValuePos(m);
-    return getScalarProductRowAndCol(m, max_pos.rowIndex, min_pos.colIndex);
-}
-
-void test_getSpecialScalarProduct() {
-    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
-                                              4, 5, 6,
-                                              7, 8, 9}, 3,3);
-    assert(getSpecialScalarProduct(m) == 102);
-    freeMemMatrix(&m);
-}
 
 int main() {
-    test_string();
+    bitset universum = {2046, 10};
+    bitset a = {1672, 10};
+    bitset b = {1802, 10};
+    bitset c = {244, 10};
+    bitset zero = {0, 10};
+
+    bitset_print(universum);
+    bitset_print(a);
+    bitset_print(b);
+    bitset_print(c);
+
+    bitset st1 = DIFF(a, zero);
+    bitset st2 = INTERSEC(b, zero);
+    bitset st3 = SYMMDIFF(st1, st2);
+    st1 = bitset_complement(DIFF(a, bitset_complement(zero)));
+    st2 = SYMMDIFF(st1, DIFF(c, zero));
+    st3 = SYMMDIFF(st3, st2);
+    bitset fi_zero = st3;
+
+    bitset_print(fi_zero);
+
+    st1 = SYMMDIFF(DIFF(a, universum), INTERSEC(b, universum));
+    st2 = SYMMDIFF(bitset_complement(DIFF(a, bitset_complement(universum))), DIFF(c, universum));
+    st3 = SYMMDIFF(st1,st2);
+    bitset fi_univ = st3;
+    bitset_print(bitset_complement(fi_univ));
 
     return 0;
 }
