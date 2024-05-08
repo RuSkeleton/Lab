@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_calculate_expression();
+    test_save_only_words_with_sequence();
 
     return 0;
 }
