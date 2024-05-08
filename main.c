@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_make_matrix_storage_by_columns();
+    test_represent_as_floating_point_numbers();
 
     return 0;
 }

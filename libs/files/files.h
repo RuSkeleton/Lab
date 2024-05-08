@@ -13,4 +13,8 @@ void make_matrix_storage_by_columns(char *file_name);
 
 void test_make_matrix_storage_by_columns();
 
+void represent_as_floating_point_numbers(char *file_name);
+
+void test_represent_as_floating_point_numbers();
+
 #endif //UNTITLED1_FILES_H
