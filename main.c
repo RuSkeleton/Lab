@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_represent_as_floating_point_numbers();
+    test_calculate_expression();
 
     return 0;
 }
