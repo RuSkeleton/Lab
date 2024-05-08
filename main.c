@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_save_only_words_with_sequence();
+    test_save_only_longest_word_in_string();
 
     return 0;
 }
