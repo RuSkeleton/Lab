@@ -12,6 +12,7 @@
 #include "libs/algorithms/for_dm/for_dm.h"
 #include "libs/string_/string_.h"
 #include "libs/data_structures/bitset/bitset.h"
+#include "libs/files/files.h"
 
 #define SYMMDIFF(a, b) bitset_symmetricDifference(a, b)
 #define COMPL(a) bitset_complement(bitset a)
@@ -21,32 +22,7 @@
 
 
 int main() {
-    bitset universum = {2046, 10};
-    bitset a = {1672, 10};
-    bitset b = {1802, 10};
-    bitset c = {244, 10};
-    bitset zero = {0, 10};
-
-    bitset_print(universum);
-    bitset_print(a);
-    bitset_print(b);
-    bitset_print(c);
-
-    bitset st1 = DIFF(a, zero);
-    bitset st2 = INTERSEC(b, zero);
-    bitset st3 = SYMMDIFF(st1, st2);
-    st1 = bitset_complement(DIFF(a, bitset_complement(zero)));
-    st2 = SYMMDIFF(st1, DIFF(c, zero));
-    st3 = SYMMDIFF(st3, st2);
-    bitset fi_zero = st3;
-
-    bitset_print(fi_zero);
-
-    st1 = SYMMDIFF(DIFF(a, universum), INTERSEC(b, universum));
-    st2 = SYMMDIFF(bitset_complement(DIFF(a, bitset_complement(universum))), DIFF(c, universum));
-    st3 = SYMMDIFF(st1,st2);
-    bitset fi_univ = st3;
-    bitset_print(bitset_complement(fi_univ));
+    test_make_matrix_storage_by_columns();
 
     return 0;
 }
