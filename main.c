@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_make_team();
+    test_update_products_information();
 
     return 0;
 }
