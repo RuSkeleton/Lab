@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_transpose_non_symmetric_matrices();
+    test_make_team();
 
     return 0;
 }
