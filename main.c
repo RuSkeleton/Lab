@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_save_only_longest_word_in_string();
+    test_remove_polynomials_if_x_sqrt_root();
 
     return 0;
 }

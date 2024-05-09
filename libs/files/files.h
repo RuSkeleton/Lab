@@ -7,6 +7,11 @@
 
 #include <stdbool.h>
 
+typedef struct polynomial {
+    int power;
+    int coefficient;
+} polynomial;
+
 bool assert_file(char *file_name, char **true_data);
 
 void make_matrix_storage_by_columns(char *file_name);
@@ -29,5 +34,8 @@ void save_only_longest_word_in_string(char *file_name);
 
 void test_save_only_longest_word_in_string();
 
+void remove_polynomials_if_x_sqrt_root(char *file_name, int *size, int x);
+
+void test_remove_polynomials_if_x_sqrt_root();
 
 #endif //UNTITLED1_FILES_H

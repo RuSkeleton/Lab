@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "C:\Users\yaros\CLionProjects\untitled1\libs\string_\string_.h" // Не понял почему, но с сокращенным путем не работало =(
+#include <math.h>
 
 bool assert_file(char *file_name, char **true_data) {
     FILE *file;
@@ -382,3 +383,53 @@ void test_save_only_longest_word_in_string() {
     char *true_data[] = {"eleven\n", "Caitlyn\n", "Goodbye\n", "Caboom"};
     assert(assert_file("test.txt", true_data));
 }
+
+void remove_polynomials_if_x_sqrt_root(char *file_name, int *size, int x) {
+    FILE *file;
+    file = fopen(file_name, "rb");
+
+    if (file == NULL) {
+        perror(file_name);
+        return;
+    }
+
+    polynomial polynomials[*size];
+    fread(polynomials, sizeof(polynomial), *size, file);
+    fclose(file);
+    file = fopen(file_name, "wb");
+
+    polynomial result[*size];
+    int result_size = 0;
+    for (size_t i = 0; i < *size; i++) {
+        if (polynomials[i].coefficient * pow(x, polynomials[i].power) != x*x || polynomials[i].power == 0) {
+            result[result_size].power = polynomials[i].power;
+            result[result_size++].coefficient = polynomials[i].coefficient;
+        }
+    }
+
+    fwrite(result, sizeof(polynomial), result_size, file);
+    *size = result_size;
+
+    fclose(file);
+}
+
+void test_remove_polynomials_if_x_sqrt_root() {
+    polynomial polynomials[] = {{3, 2}, {2, 1}, {1, -2}, {0, 3}};
+    int size = 4;
+    int x = 3;
+    FILE *test;
+    test = fopen("test.bin", "wb");
+    fwrite(polynomials, sizeof(polynomial), size, test);
+    fclose(test);
+    polynomial true_data[] = {{3, 2},{1, -2}, {0, 3}};
+    remove_polynomials_if_x_sqrt_root("test.bin", &size, x);
+    assert(size == 3);
+    polynomial results[size];
+    test = fopen("test.bin", "rb");
+    fread(results, sizeof(polynomial), size, test);
+    fclose(test);
+    for (size_t i = 0; i < size; i++) {
+        assert(results[i].power == true_data[i].power && results[i].coefficient == true_data[i].coefficient);
+    }
+}
+
