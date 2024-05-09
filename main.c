@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_sort_negative_after_positive();
+    test_transpose_non_symmetric_matrices();
 
     return 0;
 }
