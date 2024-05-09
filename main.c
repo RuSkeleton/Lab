@@ -22,7 +22,7 @@
 
 
 int main() {
-    test_remove_polynomials_if_x_sqrt_root();
+    test_sort_negative_after_positive();
 
     return 0;
 }
