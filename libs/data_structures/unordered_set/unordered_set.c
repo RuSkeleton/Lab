@@ -232,5 +232,4 @@ void printSetOfUnorderedSet(unordered_array_set *us_set, int us_set_size){
         printf("%d:  ", i);
         unordered_array_set_print(us_set[i]);
     }
-
 }

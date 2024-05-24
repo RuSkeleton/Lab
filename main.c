@@ -78,12 +78,17 @@ int main() {
 
     unordered_array_set *result = getMemArrayOfUnorderedSet(_factorial, n);
     unsigned result_size = 0;
+
+
     for (int i_set = 0; i_set < _factorial; i_set++){
         bool is_true = 1;
         for(int work = 0; work < n; work++){
             int worker_index = un_set[i_set].data[work] - 1;
             unordered_array_set work_for_worker = us_work[worker_index];
-            if (!unordered_array_set_in(work_for_worker, work)){
+            printf("worker %d:  ", worker_index);
+            unordered_array_set_print(work_for_worker);
+            if (unordered_array_set_in(work_for_worker, work) == work_for_worker.size){
+                printf("break\n");
                 is_true = 0;
                 break;
             }
