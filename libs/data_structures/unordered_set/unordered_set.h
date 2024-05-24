@@ -18,6 +18,7 @@ typedef struct unordered_array_set {
     size_t capacity; // максимальное количество элементов в множестве
 } unordered_array_set;
 
+
 // возвращает пустое множество для capacity элементов
 unordered_array_set unordered_array_set_create(size_t capacity);
 
@@ -71,5 +72,11 @@ void unordered_array_set_print(unordered_array_set set);
 
 // освобождает память, занимаемую множеством set
 void unordered_array_set_delete(unordered_array_set *set);
+
+void printSetOfUnorderedSet(unordered_array_set *us_set, int us_set_size);
+
+unordered_array_set *getMemArrayOfUnorderedSet(int nSet, int setSize);
+
+unordered_array_set *getAllPermutationUnorderedSet(unordered_array_set u_set, int setSize);
 
 # endif //LAB_UNORDERED_SET_H

@@ -11,7 +11,7 @@
 #include <malloc.h>
 #include "C:\Users\yaros\CLionProjects\untitled1\libs\string_\string_.h" // Не понял почему, но с сокращенным путем не работало =(
 #include <math.h>
-#include "/../data_structures/matrix/matrix.h"
+#include "C:\Users\yaros\CLionProjects\untitled1\libs\data_structures\matrix\matrix.h"
 
 bool assert_file(char *file_name, char **true_data) {
     FILE *file;

@@ -8,6 +8,7 @@
 # include <stdio.h>
 # include <stdbool.h>
 #include "../../algorithms/array/array.h"
+#include "../../algorithms/algorithm.h"
 
 
 unordered_array_set unordered_array_set_create(size_t capacity){
@@ -177,4 +178,59 @@ void unordered_array_set_delete(unordered_array_set *set) {
     free(set->data);
     set->size = 0;
     set->capacity = 0;
+}
+
+unordered_array_set *getMemArrayOfUnorderedSet(int nSet, int setSize){
+    unordered_array_set *us_set = (unordered_array_set*) malloc(sizeof(unordered_array_set) * nSet);
+    for (int i = 0; i < nSet; i++)
+        us_set[i] = unordered_array_set_create(setSize);
+    return us_set;
+}
+
+void generate_permutations(int *P, int n, int *M, int i,\
+                           int size, unordered_array_set *us_set, int us_set_size) {
+    for (int j = 0; j < size; j++) {
+        int x = M[j];
+        unordered_array_set_insert(&P, x);
+        P[i] = x;
+        if (i + 1 == n) {
+            unordered_array_set un_p = unordered_array_set_create_from_array(P, n);
+            for (int k = 0; k < us_set_size; k++){
+                if (us_set[k].size != n){
+                    us_set[k] = un_p;
+                    //unordered_array_set_print(us_set[k]);
+                    break;
+                }
+            }
+        } else {
+            int m[n - 1];
+            for (int k = 0; k < j; k++)
+                m[k] = M[k];
+            for (int k = j + 1; k < size; k++)
+                m[k - 1] = M[k];
+            generate_permutations(P, n, m, i + 1, size - 1, us_set, us_set_size);
+        }
+    }
+}
+
+unordered_array_set *getAllPermutationUnorderedSet(unordered_array_set u_set, int setSize){
+    unsigned _factorial = factorial(setSize);
+    unordered_array_set *us_set = getMemArrayOfUnorderedSet(_factorial, setSize);
+    int M[setSize];
+    for (int i = 0; i < setSize; i++) {
+        M[i] = u_set.data[i];
+    }
+    int P[setSize];
+    int us_set_size = 0;
+    generate_permutations(P, setSize, M, 0, setSize, us_set, _factorial);
+    //printSetOfUnorderedSet(us_set, _factorial);
+    return us_set;
+}
+
+void printSetOfUnorderedSet(unordered_array_set *us_set, int us_set_size){
+    for(int i = 0; i < us_set_size; i++){
+        printf("%d:  ", i);
+        unordered_array_set_print(us_set[i]);
+    }
+
 }

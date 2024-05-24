@@ -11,4 +11,6 @@ void swap(void * a, void * b, size_t len);
 
 int max(int a, int b);
 
+unsigned int factorial(unsigned int n);
+
 #endif //UNTITLED1_ALGORITHM_H

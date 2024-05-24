@@ -18,3 +18,12 @@ void swap(void * a, void * b, size_t len){
 int max(int a, int b) {
     return a > b ? a : b;
 }
+
+unsigned int factorial(unsigned int n){
+    int result = 1;
+    for (int i = 2; i <= n; i++) {
+        result *= i;
+    }
+    printf("factorial is %u\n", result);
+    return result;
+}
