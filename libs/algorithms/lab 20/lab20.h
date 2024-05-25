@@ -38,4 +38,8 @@ int task_5(matrix m, int rows, int cols);
 
 void test_task_5();
 
+void task_6(char *string, int len, char *result, int *result_len);
+
+void test_task_6();
+
 #endif //UNTITLED1_LAB20_H
