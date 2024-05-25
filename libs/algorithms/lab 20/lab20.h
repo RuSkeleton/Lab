@@ -12,6 +12,12 @@ typedef struct domain {
     char *name;
 } domain;
 
+typedef struct prefix {
+    int size;
+    int begin_index;
+    int end_index;
+} prefix;
+
 int** task_1(int n, int query[][4], size_t size);
 
 void test_task_1();
@@ -41,5 +47,11 @@ void test_task_5();
 void task_6(char *string, int len, char *result, int *result_len);
 
 void test_task_6();
+
+void get_new_node(int *nums, int size, prefix pref);
+
+void task_7(int *nums, int size);
+
+void test_task_7();
 
 #endif //UNTITLED1_LAB20_H
