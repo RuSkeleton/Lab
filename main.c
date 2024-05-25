@@ -14,12 +14,8 @@
 #include "libs/data_structures/bitset/bitset.h"
 #include "libs/files/files.h"
 #include "libs/algorithms/lab 20/lab20.h"
-
-
-
 #include "libs/data_structures/bitset/bitset.h"
 #include <time.h>
-
 #include "libs/data_structures/ordered_set/ordered_set.h"
 #include <time.h>
 
@@ -86,7 +82,7 @@
 
 
 int main() {
-    test_task_1();
+    test_task_2();
 
     return 0;
 }
