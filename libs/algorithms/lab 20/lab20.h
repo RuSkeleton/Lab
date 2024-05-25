@@ -7,6 +7,11 @@
 
 #include <stdio.h>
 
+typedef struct domain {
+    int visits_number;
+    char *name;
+} domain;
+
 int** task_1(int n, int query[][4], size_t size);
 
 void test_task_1();
@@ -22,5 +27,10 @@ void get_median(int filter, int matrix[filter][filter], int i, int j);
 void task_3(int filter, int matrix[filter][filter]);
 
 void test_task_3();
+
+void task_4(char **cpdomains, int size);
+
+void test_task_4();
+
 
 #endif //UNTITLED1_LAB20_H
