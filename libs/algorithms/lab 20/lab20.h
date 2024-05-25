@@ -54,4 +54,9 @@ void task_7(int *nums, int size);
 
 void test_task_7();
 
+void task_8(char *s, int *indices, char *result, int size);
+
+void test_task_8();
+
+
 #endif //UNTITLED1_LAB20_H

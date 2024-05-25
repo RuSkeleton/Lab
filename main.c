@@ -82,7 +82,7 @@
 
 
 int main() {
-    test_task_7();
+    test_task_8();
 
     return 0;
 }
