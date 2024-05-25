@@ -24,6 +24,6 @@ unsigned int factorial(unsigned int n){
     for (int i = 2; i <= n; i++) {
         result *= i;
     }
-    printf("factorial is %u\n", result);
+    //printf("factorial is %u\n", result);
     return result;
 }

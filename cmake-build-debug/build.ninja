@@ -186,6 +186,12 @@ build libs/algorithms/CMakeFiles/algorithms.dir/for_dm/for_dm.c.obj: C_COMPILER_
   OBJECT_DIR = libs\algorithms\CMakeFiles\algorithms.dir
   OBJECT_FILE_DIR = libs\algorithms\CMakeFiles\algorithms.dir\for_dm
 
+build libs/algorithms/CMakeFiles/algorithms.dir/lab_20/lab20.c.obj: C_COMPILER__algorithms_unscanned_Debug C$:/Users/yaros/CLionProjects/untitled1/libs/algorithms/lab$ 20/lab20.c || cmake_object_order_depends_target_algorithms
+  DEP_FILE = libs\algorithms\CMakeFiles\algorithms.dir\lab_20\lab20.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = libs\algorithms\CMakeFiles\algorithms.dir
+  OBJECT_FILE_DIR = libs\algorithms\CMakeFiles\algorithms.dir\lab_20
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target algorithms
@@ -194,7 +200,7 @@ build libs/algorithms/CMakeFiles/algorithms.dir/for_dm/for_dm.c.obj: C_COMPILER_
 #############################################
 # Link the static library libs\algorithms\libalgorithms.a
 
-build libs/algorithms/libalgorithms.a: C_STATIC_LIBRARY_LINKER__algorithms_Debug libs/algorithms/CMakeFiles/algorithms.dir/algorithm.c.obj libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj libs/algorithms/CMakeFiles/algorithms.dir/for_dm/for_dm.c.obj
+build libs/algorithms/libalgorithms.a: C_STATIC_LIBRARY_LINKER__algorithms_Debug libs/algorithms/CMakeFiles/algorithms.dir/algorithm.c.obj libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj libs/algorithms/CMakeFiles/algorithms.dir/for_dm/for_dm.c.obj libs/algorithms/CMakeFiles/algorithms.dir/lab_20/lab20.c.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = libs\algorithms\CMakeFiles\algorithms.dir
   POST_BUILD = cd .
