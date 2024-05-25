@@ -29,3 +29,7 @@
 6	140	7383195527317397	CMakeFiles/untitled1.dir/main.c.obj	1a0d462e92ae875a
 5	125	7383196020454997	CMakeFiles/untitled1.dir/main.c.obj	1a0d462e92ae875a
 126	297	7383196022119117	untitled1.exe	c108af88ce3231e0
+8	158	7383249896392623	CMakeFiles/untitled1.dir/main.c.obj	1a0d462e92ae875a
+15	160	7383249896395285	libs/algorithms/CMakeFiles/algorithms.dir/lab_20/lab20.c.obj	8610b0c31fcf4d93
+160	296	7383249897748999	libs/algorithms/libalgorithms.a	be98359439122fa2
+296	478	7383249899528979	untitled1.exe	c108af88ce3231e0

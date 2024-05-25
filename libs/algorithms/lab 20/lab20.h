@@ -17,4 +17,10 @@ void task_2(int m, int n, int board[n][m]);
 
 void test_task_2();
 
+void get_median(int filter, int matrix[filter][filter], int i, int j);
+
+void task_3(int filter, int matrix[filter][filter]);
+
+void test_task_3();
+
 #endif //UNTITLED1_LAB20_H
