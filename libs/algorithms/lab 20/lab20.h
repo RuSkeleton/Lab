@@ -64,4 +64,13 @@ void task_9(int *numbers, int size, int n, char *file_name_1, char *file_name_2)
 
 void test_task_9(int argc, char **argv);
 
+void handler();
+
+void task_10(char *file_name, int n);
+
+void fill_file_2(char **strings, int size, char *file_name);
+
+void test_task_10(int argc, char **argv);
+
+
 #endif //UNTITLED1_LAB20_H

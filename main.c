@@ -82,7 +82,7 @@
 
 
 int main(int argc, char **argv) {
-    test_task_9(argc, argv);
+    test_task_10(argc, argv);
 
     return 0;
 }

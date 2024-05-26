@@ -9,6 +9,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lab20.h"
+#include <signal.h>
+#include <time.h>
+#include <unistd.h>
+
 
 int** task_1(int n, int query[][4], size_t size) {
     matrix result = getMemMatrix(n, n);
@@ -512,4 +516,56 @@ void test_task_9(int argc, char **argv) {
     char *true_data[1] = {"1 4 3 2 4 4 0 -1 "};
     assert(assert_file(file_name_2, true_data));
     printf("correct");
+}
+
+static bool is_pressed = false;
+
+void handler() {
+    is_pressed = true;
+}
+
+void task_10(char *file_name, int n) {
+    FILE *file = fopen(file_name, "r");
+    char string[100];
+    int index = 0;
+
+    while (!feof(file)) {
+        if (index % n == 0 && index != 0) {
+            printf("Press ctrl+c to continue.\n");
+            signal(SIGINT, handler);
+
+            while (!is_pressed) {
+                sleep(1);
+            }
+        }
+
+        fgets(string, 100, file);
+        printf("%s", string);
+        index++;
+        is_pressed = false;
+    }
+
+    fclose(file);
+}
+
+void fill_file_2(char **strings, int size, char *file_name) {
+    FILE *file;
+    file = fopen(file_name, "w");
+    for (int i = 0; i < size; i++) {
+        if (i != size - 1) {
+            fprintf(file, "%s\n", strings[i]);
+        } else {
+            fprintf(file, "%s", strings[i]);
+        }
+    }
+
+    fclose(file);
+}
+
+void test_task_10(int argc, char **argv) {
+    char *strings[] = {"string 1", "string 2", "string 3", "string 4", "string 5", "string 6"};
+    char *file_name = argv[1];
+    int n = atoi(argv[2]);
+    fill_file_2(strings, 6, file_name);
+    task_10(file_name, n);
 }
