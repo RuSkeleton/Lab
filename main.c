@@ -81,8 +81,8 @@
 }*/
 
 
-int main(int argc, char **argv) {
-    test_task_10(argc, argv);
+int main() {
+    test_task_11();
 
     return 0;
 }

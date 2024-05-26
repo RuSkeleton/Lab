@@ -72,5 +72,10 @@ void fill_file_2(char **strings, int size, char *file_name);
 
 void test_task_10(int argc, char **argv);
 
+bool is_prefix(char *string, char *prefix);
+
+void task_11();
+
+void test_task_11();
 
 #endif //UNTITLED1_LAB20_H
